@@ -134,4 +134,11 @@ router.get('/health', (req, res) => res.json({
   status: 'ok', service: 'Honda Door-to-Door API', ts: new Date().toISOString()
 }));
 
+// ─── REPORTS ──────────────────────────────────────────────────────────────────
+const reportsCtrl = require('../controllers/reportsController');
+router.get('/reports/overview',      authenticate, isCoordinator, reportsCtrl.getOverview);
+router.get('/reports/monthly',       authenticate, isCoordinator, reportsCtrl.getMonthly);
+router.get('/reports/service-types', authenticate, isCoordinator, reportsCtrl.getServiceTypes);
+router.get('/quotations/catalog',    authenticate, quotCtrl.getCatalog);
+
 module.exports = router;
