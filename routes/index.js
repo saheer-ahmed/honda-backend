@@ -8,7 +8,7 @@ const inspCtrl  = require('../controllers/inspectionController');
 const quotCtrl  = require('../controllers/quotationController');
 const notiCtrl  = require('../controllers/notificationController');
 
-const { authenticate, requireRole, isCoordinator, isDriver } = require('../middleware/auth');
+const { authenticate, requireRole, isAdmin, isCoordinator, isDriver } = require('../middleware/auth');
 
 // ─── AUTH ─────────────────────────────────────────────────────────────────────
 router.post('/auth/register', [
