@@ -141,15 +141,6 @@ router.post('/admin/users/:id/reset-password', authenticate, isAdmin, adminCtrl.
 router.delete('/admin/users/:id',         authenticate, isAdmin, adminCtrl.deleteUser);
 
 // ─── ADMIN ────────────────────────────────────────────────────────────────────
-const adminCtrl = require('../controllers/adminController');
-router.get('/admin/stats',                     authenticate, isAdmin, adminCtrl.getAdminStats);
-router.get('/admin/users',                     authenticate, isAdmin, adminCtrl.listUsers);
-router.get('/admin/users/:id',                 authenticate, isAdmin, adminCtrl.getUser);
-router.post('/admin/users',                    authenticate, isAdmin, adminCtrl.createUser);
-router.patch('/admin/users/:id',               authenticate, isAdmin, adminCtrl.updateUser);
-router.patch('/admin/users/:id/status',        authenticate, isAdmin, adminCtrl.toggleStatus);
-router.post('/admin/users/:id/reset-password', authenticate, isAdmin, adminCtrl.resetPassword);
-router.delete('/admin/users/:id',              authenticate, isAdmin, adminCtrl.deleteUser);
 
 // ─── HEALTH ───────────────────────────────────────────────────────────────────
 router.get('/health', (req, res) => res.json({
